@@ -1,0 +1,23 @@
+
+<div class="container mt-5">
+  <div class="text-center">
+    <h1> Welcome </h1>
+  </div>
+
+  <ul class="list-group">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item d-flex justify-content-between align-items-center position-relative">
+        <a href="<%= task_path(task) %>" class="text-dark text-decoration-none flex-grow-1">
+          <div class="fw-bold"><%= task.title %></div>
+          <small class="text-muted"><%= task.details %></small>
+        </a>
+        <%= link_to delete_path(task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-sm position-absolute end-0 me-3" do %>
+        <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+    <%= link_to new_task_path, class: "btn btn-primary btn-sm end-0 mt-1" do %>
+      <i class="fa-solid fa-plus"> Add a new task</i>
+    <% end %>
+</div>

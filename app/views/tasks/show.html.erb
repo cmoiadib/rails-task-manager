@@ -1,0 +1,15 @@
+<div class="container mt-5">
+<div class="card">
+  <h5 class="card-header">Task</h5>
+  <div class="card-body">
+    <h5 class="card-title"><%= @task.title %></h5>
+    <p class="card-text"><%= @task.details %></p>
+    <%= link_to tasks_path, class: "btn btn-primary btn-sm mt-1" do %>
+      <i class="fa-solid fa-list"> List</i>
+    <% end %>
+    <%= link_to edit_task_path, class: "btn btn-warning btn-sm end-0 mt-1" do %>
+      <i class="fa-solid fa-pen-to-square"> Edit</i>
+    <% end %>
+  </div>
+</div>
+</div>
